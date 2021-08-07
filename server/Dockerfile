@@ -1,13 +1,14 @@
-FROM node:10-alpine
-
-# Create app directory
-WORKDIR /var/www/todoapp
-
-# Bundle app source
-COPY . .
-
-# Install app dependencies
-RUN npm install
-
-EXPOSE 8080
-CMD [ "node", "server.js" ]
+# pull the official base image
+FROM node: alpine
+# set working direction
+WORKDIR /app
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+# install application dependencies
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm i
+# add app
+COPY . ./
+# start app
+CMD ["npm", "start"]
