@@ -1,7 +1,13 @@
-FROM node:12-alpine
-WORKDIR /app
+FROM node:10-alpine
 
-E
+# Create app directory
+WORKDIR /var/www/todoapp
+
+# Bundle app source
 COPY . .
-RUN yarn install --production
-CMD ["node", "/app/src/server.js"]
+
+# Install app dependencies
+RUN npm install
+
+EXPOSE 8080
+CMD [ "node", "server.js" ]
