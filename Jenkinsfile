@@ -2,7 +2,7 @@ pipeline {
     
     agent any
     
-    enviroment {
+    environment {
         
         registry = "275095645738.dkr.ecr.ap-south-1.amazonaws.com/todo-project"
     }
