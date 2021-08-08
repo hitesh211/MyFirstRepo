@@ -19,10 +19,11 @@ pipeline {
     
     stage('Docker Build') {
             steps {
+                script {
                 dockerImage = docker.build registry
             }
         }
-    
+    }
         
         stage('Deploy') {
             steps {
