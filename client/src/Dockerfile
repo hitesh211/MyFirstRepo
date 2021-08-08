@@ -8,4 +8,4 @@ RUN npm install --silent
 
 EXPOSE 5000
 
-CMD ["nginx","app.py"]
+CMD ["nginx","app.js"]
