@@ -1,6 +1,11 @@
 pipeline {
     
     agent any
+    
+    enviroment{
+        
+        registry = "275095645738.dkr.ecr.ap-south-1.amazonaws.com/todo-project"
+    }
 
     stages {
         stage('checkout') {
@@ -10,6 +15,13 @@ pipeline {
             
         }
     }
+    
+    
+    stage('Docker Build') {
+            steps {
+                dockerImage = docker.build registry
+            }
+        }
     
         
         stage('Deploy') {
