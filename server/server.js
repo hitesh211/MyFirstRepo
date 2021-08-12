@@ -5,7 +5,7 @@ const pool = require('./db');
 
 //initializing express...
 const app = express();
-const PORT = 80;
+const PORT = 8080;
 
 //middleware...
 app.use(cors());
