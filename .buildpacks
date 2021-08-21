@@ -1,0 +1,8 @@
+npm install -g 
+cd Project_todo
+git init
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+git add .
+git commit -m "Project_todo"
+git push heroku main
+heroku open
